@@ -52,8 +52,8 @@ RUN set -eux; \
 		apr-util-devel \
 		openssl \
 		openssl-devel \
-		wget-1.14-18.el7_4.1 \
-		gcc-4.8.5-36.el7_5.1 \
+		wget-1.14-18.el7 \
+		gcc-4.8.5-36.el7 \
 		automake-1.13.4-3.el7 \
 		autoconf-2.69-11.el7 ; \
 	export GNUPGHOME="$(mktemp -d)"; \
