@@ -39,6 +39,8 @@ ENV TOMCAT_ASC_URLS \
 	https://www.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc \
 	https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc
 
+ENV PORT="8080"
+
 RUN set -eux; \
   # CentOS specific addition: Install RPMs needed to build Tomcat Native Library \
 	# We're version-pinning to improve the chances of repeatable builds. [DEPLOY-433] \
@@ -159,6 +161,6 @@ RUN set -e \
 		exit 1; \
 	fi
 
-EXPOSE 8080
+EXPOSE $PORT
 # Starting tomcat with Security Manager
 CMD ["catalina.sh", "run", "-security"]
