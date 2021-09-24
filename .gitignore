@@ -18,3 +18,5 @@
 target
 
 *.tar.gz
+*.tar.xz
+
